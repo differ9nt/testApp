@@ -29,24 +29,42 @@ public class FirstTest {
     @Test
     public void facebookLogin() throws InterruptedException, IOException {
 
+<<<<<<< HEAD
         WebElement search = driver.findElement(By.xpath("//*[@id='lst-ib']"));
+=======
+        WebElement search = driver.findElement(By.xpath("//*[@id=\"lst-ib\"]"));
+>>>>>>> f28f621... Initial commit
         search.sendKeys("facebook");
         search.sendKeys(Keys.ENTER);
 
         driver.findElement(By.xpath("//*[contains(text(), 'Facebook')]")).click();
 
+<<<<<<< HEAD
         System.out.println(driver.getTitle());
+=======
+        WebElement entry = driver.findElement(By.xpath("//*[@id=\"u_0_8\"]"));
+        entry.click();
+>>>>>>> f28f621... Initial commit
 
         WebElement login = driver.findElement(By.id("email"));
         login.sendKeys("differ9nt.ey9s@gmail.com");
 
         WebElement pass = driver.findElement(By.id("pass"));
+<<<<<<< HEAD
         pass.sendKeys("122klaster1993");
 
         driver.findElement(By.xpath("//*[@id='loginbutton']")).click();
 
 
         WebElement profi = driver.findElement(By.xpath("//*[@id='u_0_a']/div[1]/div[1]/div/a/span"));
+=======
+        pass.sendKeys("WP09fE83");
+
+        driver.findElement(By.xpath("//*[@id=\"u_0_9\"]")).click();
+        System.out.println(driver.getTitle());
+
+        WebElement profi = driver.findElement(By.xpath("//*[@id=\"u_0_a\"]/div[1]/div[1]/div/a/span"));
+>>>>>>> f28f621... Initial commit
         Actions actions = new Actions(driver);
         actions.moveToElement(profi, 1, 1).build().perform();
         Thread.sleep(500);
@@ -62,7 +80,11 @@ public class FirstTest {
         Thread.sleep(500);
         changePhoto.click();
         Thread.sleep(500);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> f28f621... Initial commit
         WebElement photoNew = driver.findElement(By.className("_3jjt"));
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.visibilityOf(photoNew));
@@ -79,7 +101,14 @@ public class FirstTest {
 
     }
 
+<<<<<<< HEAD
        /* @AfterClass
         public static void tearDown() {
              driver.quit(); }*/
+=======
+    @AfterClass
+    public static void tearDown() {
+        driver.quit();
+    }
+>>>>>>> f28f621... Initial commit
 }
