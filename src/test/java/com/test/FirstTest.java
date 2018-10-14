@@ -29,25 +29,24 @@ public class FirstTest {
     @Test
     public void facebookLogin() throws InterruptedException, IOException {
 
-        WebElement search = driver.findElement(By.xpath("//*[@id=\"lst-ib\"]"));
+        WebElement search = driver.findElement(By.xpath("//*[@id='lst-ib']"));
         search.sendKeys("facebook");
         search.sendKeys(Keys.ENTER);
 
         driver.findElement(By.xpath("//*[contains(text(), 'Facebook')]")).click();
 
-        WebElement entry = driver.findElement(By.xpath("//*[@id=\"u_0_8\"]"));
-        entry.click();
+        System.out.println(driver.getTitle());
 
         WebElement login = driver.findElement(By.id("email"));
         login.sendKeys("differ9nt.ey9s@gmail.com");
 
         WebElement pass = driver.findElement(By.id("pass"));
-        pass.sendKeys("WP09fE83");
+        pass.sendKeys("122klaster1993");
 
-        driver.findElement(By.xpath("//*[@id=\"u_0_9\"]")).click();
-        System.out.println(driver.getTitle());
+        driver.findElement(By.xpath("//*[@id='loginbutton']")).click();
 
-        WebElement profi = driver.findElement(By.xpath("//*[@id=\"u_0_a\"]/div[1]/div[1]/div/a/span"));
+
+        WebElement profi = driver.findElement(By.xpath("//*[@id='u_0_a']/div[1]/div[1]/div/a/span"));
         Actions actions = new Actions(driver);
         actions.moveToElement(profi, 1, 1).build().perform();
         Thread.sleep(500);
@@ -63,7 +62,7 @@ public class FirstTest {
         Thread.sleep(500);
         changePhoto.click();
         Thread.sleep(500);
-        
+
         WebElement photoNew = driver.findElement(By.className("_3jjt"));
         (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.visibilityOf(photoNew));
@@ -80,8 +79,7 @@ public class FirstTest {
 
     }
 
-    @AfterClass
-    public static void tearDown() {
-        driver.quit();
-    }
+       /* @AfterClass
+        public static void tearDown() {
+             driver.quit(); }*/
 }
